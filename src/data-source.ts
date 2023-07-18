@@ -1,5 +1,10 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
+import { Marca } from "./entity/Marca"
+import { Tipo_Vehiculo } from "./entity/Tipo_Vehiculo"
+import { Vehiculo } from "./entity/Vehiculo"
+import { Color } from "./entity/Color"
+import { Usuario } from "./entity/Usuario"
 
 
 export const AppDataSource = new DataSource({
@@ -8,10 +13,10 @@ export const AppDataSource = new DataSource({
     port: 3306,
     username: "root",
     password: "root",
-    database: "bdExamen",
+    database: "bdexamen",
     synchronize: true,
     logging: false,
-    entities: [],
+    entities: [Marca, Tipo_Vehiculo, Vehiculo, Color, Usuario],
     migrations: [],
     subscribers: [],
 })
